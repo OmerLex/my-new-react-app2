@@ -1,23 +1,63 @@
 import logo from './logo.svg';
 import './App.css';
+import Comp1 from './components/Comp1';
+//import data from './components/Data.js';
+import data from './components/Data.json';
+
+// const data =[{
+//   firstName: "John",
+//   lastName: "Doe",
+//   id: 1
+// },
+// {
+//   firstName: "Johan",
+//   lastName: "Doe",
+//   id: 2
+// },
+// {
+//   firstName: "Sara",
+//   lastName: "Doe",
+//   id: 3
+// },
+// {
+//   firstName: "Henrik",
+//   lastName: "Johansson",
+//   id: 4
+// }
+// ];
+
+const allData = (values) => {
+  return(
+    <>
+      <Comp1
+        firstName={values.firstName}
+        lastName={values.lastName}
+        id= {values.id}
+        src={values.src}
+      />
+    </>
+  )
+}
+
+
+
+//console.log(data[1].lastName);
 
 function App() {
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Props</h1>
+      {/* <Comp1
+        firstName={data.firstName}
+        lastName={data.lastName}
+        id={data.id}
+      /> */}
+      {/* <Comp1 
+          {...data}
+      /> */}
+
+      {data.map(allData)}
     </div>
   );
 }
