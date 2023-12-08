@@ -30,10 +30,12 @@ const allData = (values) => {
   return(
     <>
       <Comp1
-        firstName={values.firstName}
-        lastName={values.lastName}
-        id= {values.id}
-        src={values.src}
+        // firstName={values.firstName}
+        // lastName={values.lastName}
+        // id= {values.id}
+        // src={values.src}
+
+        {...values}
       />
     </>
   )
@@ -58,6 +60,9 @@ function App() {
       /> */}
 
       {data.map(allData)}
+
+      
+
     </div>
   );
 }
